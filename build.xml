@@ -7,13 +7,16 @@
     <property name="classdir" value="${web}/WEB-INF/classes"/>
 
 
-    <property name="tomcat.webapps" value="C:\tomcat6.018\apache-tomcat-6.0.18\webapps"/>
-    <property name="warFile" value="webapp.war"/>
+    <property name="tomcat" value="E:\\apache-tomcat-7.0.108"/>
+    <property name="tomcat.webapps" value="${tomcat}/webapps"/>
+    <property name="warFile" value="chat.war"/>
     <property name="distDir" value="${dirs.base}/build/dist"/>
     <property name="warDir" value="${dirs.base}/build/war"/>
     <property name="srcDir" value="${dirs.base}/src"/>
     <property name="libDir" value="${web}/WEB-INF/lib"/>
+    <property name="servletLibDir" value="${tomcat}/lib/servlet-api.jar"/>
     <property name="deploymentdescription" value="${dirs.base}/web/WEB-INF"/>
+    <!-- "E:\apache-tomcat-7.0.108\lib\servlet-api.jar" -->
 
 
     <target name="clean" description="Delete old build directories">
@@ -36,6 +39,7 @@
         <javac srcdir="${src}" destdir="${classdir}" debug="true" includes="**/*.java">
         <classpath >
             <fileset dir="${libDir}" includes="*.jar" />
+            <pathelement path="${tomcat}/lib/servlet-api.jar"/>
         </classpath>
         </javac>
     </target>
