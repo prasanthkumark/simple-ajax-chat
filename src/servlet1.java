@@ -1,3 +1,5 @@
+package com.mycompany.servlet;
+
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
